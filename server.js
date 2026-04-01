@@ -48,6 +48,16 @@ app.get('/api/orders', (req,res)=>{
   });
 });
 
+// delete an order
+app.delete('/api/orders/:id', (req,res)=>{
+  const id = req.params.id;
+  db.run(`DELETE FROM orders WHERE id = ?`, [id], function(err){
+    if(err) return res.status(500).json({error:err.message});
+    if(this.changes === 0) return res.status(404).json({error:'not found'});
+    res.json({ok:true});
+  });
+});
+
 app.get('/admin', (req,res)=>{
   res.sendFile(path.join(__dirname,'admin.html'));
 });

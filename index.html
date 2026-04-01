@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MTVHOOPS — Performance Basketball Footwear</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello World</h1>
-  <button onclick="clickMe()">Click me</button>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">MTVHOOPS</h1>
+      <nav class="nav">
+        <a href="#product">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Performance Basketball Footwear</h2>
+          <p>Lightweight. Court feel. Elite traction.</p>
+          <a class="btn" href="#product" onclick="scrollToProduct(event)">Shop Now</a>
+        </div>
+        <div class="hero-image">
+          <img src="https://via.placeholder.com/600x380?text=MTVHOOPS+Shoe" alt="MTVHOOPS shoe">
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="product-grid container">
+      <article class="product-card">
+        <img src="https://via.placeholder.com/480x320?text=Kobe+6+Protro" alt="Kobe 6 Protro">
+        <h3>Kobe 6 Protro</h3>
+        <p class="desc">Lightweight. Court feel. Elite traction.</p>
+        <p class="price">3.200.000đ</p>
+        <button class="btn outline" onclick="order()">Order Now</button>
+      </article>
+    </section>
+
+    <section id="about" class="container about">
+      <h4>About MTVHOOPS</h4>
+      <p>Designed for players who demand maximum performance. Durable, responsive, and crafted for the court.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Follow us on Instagram: <a href="https://instagram.com/mtvhoops.legit" target="_blank" rel="noopener">@mtvhoops.legit</a></div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-<h1>MTVHOOPS</h1>
-<p>Performance Basketball Footwear</p>
-
-<div class="product">
-  <img src="https://via.placeholder.com/200">
-  <h2>Kobe 6 Protro</h2>
-  <p>Lightweight. Court feel. Elite traction.</p>
-  <p>Price: 3.200.000đ</p>
-  <button onclick="order()">Order Now</button>
-</div>

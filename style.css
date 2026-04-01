@@ -8,10 +8,11 @@ body{font-family: 'Oswald', 'Impact', 'Arial Black', system-ui, -apple-system, '
 .page-border{height:6px;background:transparent;border-top:2px solid #000}
 .page-border.bottom{border-top:none;border-bottom:2px solid #000}
 
-.site-header{padding:22px 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+.site-header{padding:22px 0;border-bottom:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;justify-content:space-between}
 .logo-wrap{display:flex;align-items:center;gap:12px}
 .logo-box{width:34px;height:34px;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;border-radius:2px}
 .logo{font-size:18px;margin:0;font-family:inherit;font-weight:700}
+.nav-admin a{text-decoration:none;color:#000;font-weight:700}
 
 /* Hero */
 .track-hero{position:relative;min-height:560px;display:flex;align-items:center;justify-content:center;padding:36px 0}

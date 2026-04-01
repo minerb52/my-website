@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — MTVHOOPS Orders</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-wrap{max-width:900px;margin:40px auto;padding:20px}
+    .admin-card{background:#fff;padding:18px;border-radius:8px;border:1px solid rgba(0,0,0,0.04)}
+    label{display:block;margin:8px 0 6px;font-weight:700}
+    input[type=text], textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px}
+    .row{display:flex;gap:12px;align-items:center}
+    .orders-list{margin-top:16px}
+    .order-item{padding:12px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between}
+    .btn-primary{background:#000;color:#fff;padding:10px 14px;border:0;border-radius:4px;cursor:pointer}
+    .muted{color:#6b6b6b}
+  </style>
+</head>
+<body>
+  <div class="container admin-wrap">
+    <h2>Admin — Manage Orders</h2>
+    <div class="admin-card">
+      <form id="admin-form">
+        <label for="a-id">Order ID</label>
+        <input id="a-id" type="text" placeholder="MTVHOOPS-12345" required>
+
+        <label for="a-status">Status</label>
+        <input id="a-status" type="text" value="Pending">
+
+        <label for="a-notes">Notes</label>
+        <textarea id="a-notes" rows="3" placeholder="Optional notes"></textarea>
+
+        <div style="margin-top:12px">
+          <button class="btn-primary" type="submit">Save / Sync</button>
+          <button id="clear-local" type="button" style="margin-left:8px;" class="btn-primary">Clear Local</button>
+        </div>
+      </form>
+
+      <section class="orders-list">
+        <h4>Existing Orders</h4>
+        <div id="orders" class="orders"></div>
+      </section>
+    </div>
+
+    <p class="muted">This admin panel saves orders to the server (if running) or to localStorage as a fallback.</p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3000;
 const DB_PATH = path.join(__dirname, 'orders.db');
 
 app.use(express.json());
-app.use(express.static(__dirname));
 
 // Simple HTTP Basic auth middleware for admin routes
 function requireAdmin(req, res, next){
@@ -87,6 +86,9 @@ app.delete('/api/orders/:id', requireAdmin, (req,res)=>{
 app.get('/admin', requireAdmin, (req,res)=>{
   res.sendFile(path.join(__dirname,'admin.html'));
 });
+
+// Serve static files (after admin route to ensure /admin is protected)
+app.use(express.static(__dirname));
 
 app.listen(PORT, ()=>{
   console.log('Server listening on', PORT);
